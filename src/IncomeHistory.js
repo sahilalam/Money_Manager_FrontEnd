@@ -53,6 +53,13 @@ export default class IncomeHistory extends React.Component{
     filter=()=>{
         this.setState({modal:true,form:true,spinner:false});
     }
+    componentDidMount(){
+        if(!this.state.data)
+        {
+            this.details("Last Three Months",0)
+        }
+        
+    }
     render(){
 
 
@@ -66,42 +73,50 @@ export default class IncomeHistory extends React.Component{
                 <Col xs="12" className="mb-5">
                     <Col xs="12" className="text-center"><Button className="btn-info buton mb-2" onClick={this.filter}>Filter</Button></Col>
                     <Col xs="12" className="p-2" ref={this.dropdown}>Filter Applied</Col>
-                    <Col xs="12" className="tube">
-                        <Col xs="12" className="box mb-2">
-                            income 1<br/>
-                            income 1<br/>
-                            income 1<br/>
-                            income 1<br/>
-                        </Col>
-                        <Col xs="12" className="box mb-2">
-                            income 1<br/>
-                            income 1<br/>
-                            income 1<br/>
-                            income 1<br/>
-                        </Col>
-                        <Col xs="12" className="box mb-2">
-                            income 1<br/>
-                            income 1<br/>
-                            income 1<br/>
-                            income 1<br/>
-                        </Col>
+                    <Col xs="12" className="tube bg-cyan">
+                        {
+                            this.state.data
+                            ?
+                              this.state.data.length
+                              ?
+                                this.state.data.map((d)=>{
+                                    let date=new Date(d.date);
+                                    date=date.toString();
+                                    return (
+                                        <Col xs="12" className="box mb-2" key={d._id}>
+                                            <Row className="justify-content-center">
+                                                <Col xs="4">Amount : </Col><Col xs="8">Rs. {d.amount}</Col>
+                                                <Col xs="4">Description : </Col><Col xs="8">{d.description}</Col>
+                                                <Col xs="4">Date : </Col><Col xs="8">{date}</Col>
+                                            </Row>
+                                        </Col>
+                                    )
+                                })
+                                :
+                                <Col xs="12" className="heading text-center">No Data for the given range of dates..</Col>
+                            :
+                            <Col xs="12" className="heading text-center">Loading..</Col>
+                        }
+
                     </Col>
                 </Col>  
             </Row>
             :
-            <Col xs="12" className="heading">Feature Not Added Yet</Col>
+            <Col xs="12" className="heading">Loading...</Col>
             }
             <Modal show={this.state.modal} onHide={()=>{
                 this.setState({modal:false})
-            }} backdrop="static">
+            }} backdrop="static" className="text text-secondary">
                 {
                     this.state.form
                     ?
                     <Modal.Header closeButton>
                         <Form onSubmit={(event)=>{event.preventDefault();this.details("filter applied",1)}}>
+                            From
                             <input type="datetime-local" className="form-control mb-2" required={true} ref={this.from}/>
+                            To
                             <input type="datetime-local" className="form-control mb-2" required={true} ref={this.to}/>
-                            <button type="submit" className="btn btn-info buton mb-2">Submit</button>
+                            <button type="submit" className="btn btn-info buton header mb-2">Submit</button>
                         </Form>
                     </Modal.Header>
                     :

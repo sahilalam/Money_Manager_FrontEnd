@@ -164,7 +164,7 @@ export default class Content extends React.Component{
                                             <option value="Movie">Movie</option>
                                             <option value="Food">Food</option>
                                             <option value="Loan">Loan</option>
-                                            <option value="Loan">Other</option>
+                                            <option value="Other">Other</option>
                                         </select>
                                         <input type="datetime-local" required={true} ref={this.expenditureDate} className="form-control mb-2"/>
                                         <button type="submit" className="buton mb-2 header">Submit</button>
@@ -181,8 +181,11 @@ export default class Content extends React.Component{
                                         Please Wait..<Spinner animation="border" />
                                     </Modal.Header>
                                 :
-                                    <Modal.Header closeButton>
+                                    <Modal.Header >
                                         {this.state.message}
+                                        <button className="btn btn-info" onClick={()=>{
+                                            window.location.reload();
+                                        }}>Close</button>
                                     </Modal.Header>
 
                         }
