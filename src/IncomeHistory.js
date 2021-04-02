@@ -1,5 +1,5 @@
 import React from "react";
-import {Row,Col,Form,Modal,Spinner,Button,Dropdown,Navbar,Nav,NavDropdown} from "react-bootstrap";
+import {Row,Col,Form,Modal,Spinner,Button} from "react-bootstrap";
 
 export default class IncomeHistory extends React.Component{
     dropdown=React.createRef();
@@ -41,7 +41,6 @@ export default class IncomeHistory extends React.Component{
                 this.context.logout();
             }
             data=await data.json();
-            console.log(data);
             this.setState({modal:false,data:data.data});
             this.dropdown.current.innerText=text
         }
