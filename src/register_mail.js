@@ -76,7 +76,7 @@ export default class RegisterMail extends React.Component{
                     </Col>
                     </Form>
                 </Col>  
-                <Modal show={this.state.toast} onHide={this.toggleToast} backdrop="static">
+                <Modal show={this.state.toast} onHide={this.toggleToast} backdrop="static" className="text text-dark">
                         {this.state.spinner ? <Modal.Header>Please Wait..<Spinner animation="border" /> </Modal.Header >: <Modal.Header closeButton>{this.state.message}</Modal.Header> }
                 </Modal> 
                 </Row>

@@ -92,7 +92,7 @@ export default class Login extends React.Component{
                                 <button type="submit" className="buton mb-2 header">Submit</button>
                                 </Col>   
                             </Form>
-                            <Modal show={this.state.toast} onHide={this.toggleToast} backdrop="static">
+                            <Modal show={this.state.toast} onHide={this.toggleToast} backdrop="static" className="text text-dark">
                                 {
                                     this.state.spinner
                                     ?

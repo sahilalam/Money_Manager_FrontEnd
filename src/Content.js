@@ -1,6 +1,6 @@
 import React from "react";
-import {Row,Col,Form,Modal,Spinner,Button,Navbar,Nav,Tab,Tabs} from "react-bootstrap";
-import {BrowserRouter, Redirect,Route} from "react-router-dom";
+import {Row,Col,Form,Modal,Spinner,Navbar,Nav,Tab,Tabs} from "react-bootstrap";
+import {Redirect} from "react-router-dom";
 import createBody from "./creatBody.js";
 import Context from "./Context.js";
 import DashBoard from "./DashBoard.js";
@@ -127,17 +127,23 @@ export default class Content extends React.Component{
                 <Row className="justify-content-center p-3">
                     <Modal show={this.state.modal} onHide={()=>{
                         this.setState({modal:false})
-                    }} backdrop="static">
+                    }} backdrop="static" >
                         {
                             this.state.form
                             ?
-                            <Modal.Header closeButton className="text text-secondary">
-                            <Tabs defaultActiveKey="Form">
-                                <Tab.Container eventKey="Income" title="Income">
+                            <>
+                                <Modal.Header closeButton className="text text-secondary">
+                            Add New
+                            </Modal.Header >
+                            <Modal.Body>
+                                <Tabs defaultActiveKey="Form">
+                                <Tab eventKey="Income" title="Income">
                                     <Row className="p-3">
                                         <Col xs="12">
                                             <Form onSubmit={this.addIncome} className="">
+                                                Amount
                                             <Form.Control ref={this.incomeAmount} type="number" required={true} placeholder="Enter Income Amount.." className="mb-3 input" />
+                                            Description
                                             <Form.Control ref={this.incomeDescription} as="textarea" required={true} placeholder="Enter Income Description.." className="mb-3 input" />
                                             <input type="datetime-local" required={true} ref={this.incomeDate} className="form-control mb-2"/>
                                             <button type="submit" className="buton mb-2 header">Submit</button>
@@ -145,12 +151,14 @@ export default class Content extends React.Component{
                                             
                                         </Col>
                                     </Row>
-                                </Tab.Container>
+                                </Tab>
                                 <Tab eventKey="Expenditure" title="Expenditure">
                                     <Row className="p-3">
                                         <Col xs="12">
                                         <Form onSubmit={this.addExpenditure}>
+                                            Amount
                                         <Form.Control ref={this.expenditureAmount} type="number" required={true} placeholder="Enter Expenditure Amount.." className="mb-3 input" />
+                                        Description
                                         <Form.Control ref={this.expenditureDescription} type="text" as="textarea" required={true} placeholder="Enter Expenditure Description.." className="mb-3 input" />
                                         Division
                                         <select name="divsion" ref={this.division} required={true} className="form-control">
@@ -173,15 +181,17 @@ export default class Content extends React.Component{
                                     </Row>
                                 </Tab>
                             </Tabs>
-                            </Modal.Header>
+                            </Modal.Body>
+                            </>
+                            
                             :
                                 this.state.spinner
                                 ?
-                                    <Modal.Header>
+                                    <Modal.Header className="text text-secondary">
                                         Please Wait..<Spinner animation="border" />
                                     </Modal.Header>
                                 :
-                                    <Modal.Header >
+                                    <Modal.Header className="text text-secondary">
                                         {this.state.message}
                                         <button className="btn btn-info" onClick={()=>{
                                             window.location.reload();

@@ -36,7 +36,7 @@
 }
 .buton:hover{
   background-color:darkturquoise;
-  color:white;
+  color:black;
   box-shadow: 2px 2px 30px cyan;
   animation: boxShadowHover 3s infinite ;
 }

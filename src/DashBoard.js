@@ -63,7 +63,7 @@ export default class DashBoard extends React.Component{
                     <Row className="justify-content-center">
                     <Col xs="12" className="mb-3">
                         <Dropdown>
-                            <Dropdown.Toggle ref={this.dropdown} variant="success" id="dropdown-basic-1" className="header buton" variant="info">
+                            <Dropdown.Toggle ref={this.dropdown} id="dropdown-basic-1" className="header buton" variant="info">
                                 Show Details of:
                             </Dropdown.Toggle>
 
@@ -96,7 +96,7 @@ export default class DashBoard extends React.Component{
                             </Col>
                             <Modal show={this.state.modal} onHide={()=>{
                                 this.setState({modal:false})
-                            }} backdrop="static">
+                            }} backdrop="static" className="text text-secondary">
                                 <Modal.Header>Please Wait..<Spinner animation="border"></Spinner></Modal.Header>
                             </Modal>
                             
