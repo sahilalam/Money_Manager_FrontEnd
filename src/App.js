@@ -142,7 +142,7 @@ componentDidUpdate(){
                     <h3 className="heading">
                     Dashboard
                     </h3>
-                    <p className="box box-shadow-dark img text-center">
+                    <p className="box box-shadow-dark img text-center  width-100">
                       Get details of your monthly ,weekly and yearly details of income and expenditure alongside with the details of money spent on different categories like food,fuel,movie,etc and divisions like office and personal.These details are reflected on a pie chart to give you better visual representation of your expenditures.
                     </p>
                    
@@ -158,7 +158,7 @@ componentDidUpdate(){
                     <h3 className="heading">
                     Income History
                     </h3>
-                    <p className="box box-shadow-dark img text-center">
+                    <p className="box box-shadow-dark img text-center  width-100">
                       Get details of your Incomes on the Income History page .Apply filters to get income data of specific dates.Update your income details within 12 hours of adding.
                     </p>
                    
@@ -170,7 +170,7 @@ componentDidUpdate(){
                     <h3 className="heading">
                     Expenditure History
                     </h3>
-                    <p className="box box-shadow-dark img text-center">
+                    <p className="box box-shadow-dark img text-center width-100">
                     Get details of your Expenses on the Expenditure History page .Apply filters based on categories ,dates and divisions to get expenditure data of specific dates.Update your Expenditure details within 12 hours of adding.
                     </p>
                    
