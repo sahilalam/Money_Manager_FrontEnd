@@ -68,24 +68,24 @@ export default class DashBoard extends React.Component{
                 expenditure=expenditure+(+d.amount);
                 if(d.division==="Personal")
                 {
-                    personal+=d.amount;
+                    personal+=(+d.amount);
                 }
                 else
                 {
-                    office+=d.amount;
+                    office+=(+d.amount);
                 }
                 if(d.category==="Fuel")
-                {fuel+=d.amount}
+                {fuel+=(+d.amount)}
                 if(d.category==="Medical")
-                {medical+=d.amount}
+                {medical+=(+d.amount)}
                 if(d.category==="Food")
-                {food+=d.amount}
+                {food+=(+d.amount)}
                 if(d.category==="Loan")
-                {loan+=d.amount}
+                {loan+=(+d.amount)}
                 if(d.category==="Other")
-                {other+=d.amount}
+                {other+=(+d.amount)}
                 if(d.category==="Movie")
-                {movie+=d.amount}
+                {movie+=(+d.amount)}
 
             });
             
