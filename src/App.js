@@ -69,26 +69,25 @@ componentDidUpdate(){
     
     
     return (
-      <div>
       <BrowserRouter>
           <Row className="nav-bar ">
             <Col md="7" xs="12" className="text-align-left">
             <h3 className="heading">Money Manager</h3>
             </Col>
             <Col md="5" xs="12">
-              <Row className="justify-content-end">
+              <Row className="justify-content-end p-0">
               {
               window.localStorage.access_token
               ?
                 <>
-                <Col xs="6" md="5" className="p-0 m-0">
+                <Col xs="6" md="5" className="m-0">
                   <div  className="tube " ref={this.username}>
                     {window.localStorage.name}
                   </div>
                 </Col>
                   
                   <Col xs="6" md="5" onClick={this.logout}>
-                    <NavLink to="/register" className="nav-link buton header">
+                    <NavLink to="/register" className="nav-link buton header m-0">
                       Logout
                     </NavLink>
                   </Col>
@@ -96,12 +95,12 @@ componentDidUpdate(){
               :
               <>
                 <Col xs="6" md="5">
-                <NavLink to="/register" className="nav-link buton header">
+                <NavLink to="/register" className="nav-link buton header m-0">
                   Register
                 </NavLink>
                 </Col>
                 <Col xs="6" md="5">
-                  <NavLink to="/login" className="nav-link buton header">
+                  <NavLink to="/login" className="nav-link buton header m-0">
                       Login
                   </NavLink>
                 </Col>
@@ -138,9 +137,6 @@ componentDidUpdate(){
           
           
       </BrowserRouter>
-      </div>
-      
-      
     )
   }
 }
