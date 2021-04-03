@@ -187,8 +187,8 @@ export default class DashBoard extends React.Component{
                                     <Col xs="6" className="mt-3">
                                     <PieChart 
                                         data={[
-                                            { title: 'Fuel', value: this.state.fuel, color: '#FFA900' },
-                                            { title: 'Food', value: this.state.food, color: '#F93154' },
+                                            { title: 'Fuel', value: this.state.fuel, color: '#F93154' },
+                                            { title: 'Food', value: this.state.food, color: '#FFA900' },
                                             { title: 'Medical', value: this.state.medical, color: '#1266F1' },
                                             { title: 'Movie', value: this.state.movie, color: '#39C0ED' },
                                             { title: 'Loan', value: this.state.loan, color: '#00B74A' },
