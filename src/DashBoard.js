@@ -1,15 +1,26 @@
 import React from 'react';
 import {Row,Col,Dropdown,Modal,Spinner} from "react-bootstrap";
 import Context from "./Context.js";
+import { PieChart } from 'react-minimal-pie-chart';
 
 export default class DashBoard extends React.Component{
     static contextType=Context;
+    weekly=React.createRef();
     constructor(props){
         super(props);
         this.state={
             income:0,
             expenditure:0,
-            modal:false
+            modal:false,
+            personal:60,
+            office:40,
+            fuel:0,
+            medical:0,
+            movie:0,
+            food:0,
+            loan:0,
+            other:0
+
         }
     }
     dropdown=React.createRef();
@@ -45,16 +56,57 @@ export default class DashBoard extends React.Component{
                 this.context.logout();
             }
             data=await data.json();
+            let personal=0;
+            let office=0;
+            let fuel=0;
+            let medical=0;
+            let movie=0;
+            let food=0;
+            let loan=0;
+            let other=0;
             data.data.forEach((d)=>{
                 expenditure=expenditure+(+d.amount);
-            });
+                if(d.division==="Personal")
+                {
+                    personal+=d.amount;
+                }
+                else
+                {
+                    office+=d.amount;
+                }
+                if(d.category==="Fuel")
+                {fuel+=d.amount}
+                if(d.category==="Medical")
+                {medical+=d.amount}
+                if(d.category==="Food")
+                {food+=d.amount}
+                if(d.category==="Loan")
+                {loan+=d.amount}
+                if(d.category==="Other")
+                {other+=d.amount}
+                if(d.category==="Movie")
+                {movie+=d.amount}
 
-            this.setState({modal:false,income,expenditure});
+            });
+            
+            personal=+personal;
+            office=+office;
+            fuel=+fuel;
+            medical=+medical;
+            movie=+movie;
+            food=+food;
+            loan=+loan;
+            other=+other;
+            this.setState({modal:false,income,expenditure,personal,office,fuel,medical,movie,food,loan,other});
             this.dropdown.current.innerText=text
         }
         catch(err){
             console.log(err);
         }
+
+    }
+    componentDidMount(){
+        this.details(7,"Last Week");
 
     }
     render(){
@@ -68,7 +120,7 @@ export default class DashBoard extends React.Component{
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu className="buton bg-cyan">
-                                <Dropdown.Item href="#/action-1" onClick={()=>{this.details(7,"Last Week")}}>Last Week</Dropdown.Item>
+                                <Dropdown.Item href="#/action-1" onClick={()=>{this.details(7,"Last Week")}} ref={this.weekly}>Last Week</Dropdown.Item>
                                 <Dropdown.Item href="#/action-2" onClick={()=>{this.details(30,"Last Month")}}>Last Month</Dropdown.Item>
                                 <Dropdown.Item href="#/action-3" onClick={()=>{this.details(365,"Last Year")}}>Last Year</Dropdown.Item>
                             </Dropdown.Menu>
@@ -78,19 +130,75 @@ export default class DashBoard extends React.Component{
                     <Col xs="11">
                     <Row className="justify-content-center">
                             <Col xs="12" className="tube mb-3 p-3 text-center">
-                            <Row >
+                            <Row className="mb-2">
                                 <Col xs="6">
                                     <Row className="p-1 justify-content-center">
-                                    <Col xs="7" className="heading ">Total Income :</Col>
-                                    <Col xs="5" className="text-light text-align-left"> Rs. {this.state.income}</Col>
+                                    <Col xs="6" className="heading ">Total Income</Col>
+                                    <Col xs="6" className="text-light text-align-left"> Rs. {this.state.income}</Col>
                                     </Row>
                                 </Col>
                                 <Col xs="6">
                                     <Row className="p-1 justify-content-center">
-                                    <Col xs="7" className="heading ">Total Expenditure :</Col>
-                                    <Col xs="5" className="text-light text-align-left"> Rs. {this.state.expenditure}</Col>
+                                    <Col xs="6" className="heading ">Total Expenditure</Col>
+                                    <Col xs="6" className="text-light text-align-left"> Rs. {this.state.expenditure}</Col>
                                     </Row>
                                 </Col>
+                            </Row>
+                            <Row className="justify-content-center">
+                                <Col xs="12" className="heading mb-2">Expenditure Details</Col>
+                                <Col xs="12">
+                                    <Row className="justify-content-center mb-3">
+                                    <Col xs="5" className="tube bg-danger">
+                                        Office- Rs.{this.state.office}
+                                    </Col>
+                                    <Col xs="5" className="tube bg-warning">
+                                        Personal- Rs.{this.state.personal}
+                                    </Col>
+                                    <Col xs="6" className="mt-3">
+                                    <PieChart
+                                        data={[
+                                            { title: 'Personal', value: this.state.personal, color: '#FFA900' },
+                                            { title: 'Office', value: this.state.office, color: '#F93154' }
+                                        ]}
+                                        />
+                                    </Col>
+                                    </Row>
+                                </Col>
+                                <Col xs="12">
+                                    <Row className="justify-content-center mb-3">
+                                    <Col xs="5" className="tube bg-danger">
+                                        Fuel- Rs.{this.state.fuel}
+                                    </Col>
+                                    <Col xs="5" className="tube bg-warning">
+                                        Food- Rs.{this.state.food}
+                                    </Col>
+                                    <Col xs="5" className="tube bg-primary">
+                                        Medical- Rs.{this.state.medical}
+                                    </Col>
+                                    <Col xs="5" className="tube bg-info">
+                                        Movie- Rs.{this.state.movie}
+                                    </Col>
+                                    <Col xs="5" className="tube bg-success">
+                                        Loan- Rs.{this.state.loan}
+                                    </Col>
+                                    <Col xs="5" className="tube bg-dark">
+                                        Other- Rs.{this.state.other}
+                                    </Col>
+                                    <Col xs="6" className="mt-3">
+                                    <PieChart 
+                                        data={[
+                                            { title: 'Fuel', value: this.state.fuel, color: '#FFA900' },
+                                            { title: 'Food', value: this.state.food, color: '#F93154' },
+                                            { title: 'Medical', value: this.state.medical, color: '#1266F1' },
+                                            { title: 'Movie', value: this.state.movie, color: '#39C0ED' },
+                                            { title: 'Loan', value: this.state.loan, color: '#00B74A' },
+                                            { title: 'Other', value: this.state.other, color: '#262626' }
+                                        ]}
+                                        />
+                                    </Col>
+                                    </Row>
+                                </Col>
+                                
                             </Row>
                             
                             </Col>

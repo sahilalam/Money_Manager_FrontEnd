@@ -127,12 +127,12 @@ export default class Content extends React.Component{
                 <Row className="justify-content-center p-3">
                     <Modal show={this.state.modal} onHide={()=>{
                         this.setState({modal:false})
-                    }} backdrop="static" >
+                    }} backdrop="static" className="text text-secondary">
                         {
                             this.state.form
                             ?
                             <>
-                                <Modal.Header closeButton className="text text-secondary">
+                                <Modal.Header closeButton >
                             Add New
                             </Modal.Header >
                             <Modal.Body>
