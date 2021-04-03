@@ -81,13 +81,13 @@ componentDidUpdate(){
               ?
                 <>
                 <Col xs="6" md="5" className="m-0">
-                  <div  className="tube " ref={this.username}>
+                  <div  className="box box-shadow-dark p-2 m-0 " ref={this.username}>
                     {window.localStorage.name}
                   </div>
                 </Col>
                   
                   <Col xs="6" md="5" onClick={this.logout}>
-                    <NavLink to="/register" className="nav-link buton header m-0">
+                    <NavLink to="/register" className="nav-link buton p-2 m-0 ">
                       Logout
                     </NavLink>
                   </Col>
@@ -95,12 +95,12 @@ componentDidUpdate(){
               :
               <>
                 <Col xs="6" md="5">
-                <NavLink to="/register" className="nav-link buton header m-0">
+                <NavLink to="/register" className="nav-link buton p-2 m-0">
                   Register
                 </NavLink>
                 </Col>
                 <Col xs="6" md="5">
-                  <NavLink to="/login" className="nav-link buton header m-0">
+                  <NavLink to="/login" className="nav-link buton p-2 m-0">
                       Login
                   </NavLink>
                 </Col>

@@ -115,7 +115,7 @@ export default class DashBoard extends React.Component{
                     <Row className="justify-content-center">
                     <Col xs="12" className="mb-3">
                         <Dropdown>
-                            <Dropdown.Toggle ref={this.dropdown} id="dropdown-basic-1" className="header buton" variant="info">
+                            <Dropdown.Toggle ref={this.dropdown} id="dropdown-basic-1" className="buton" variant="dark">
                                 Show Details of:
                             </Dropdown.Toggle>
 
@@ -129,16 +129,16 @@ export default class DashBoard extends React.Component{
                     </Col>
                     <Col xs="11">
                     <Row className="justify-content-center">
-                            <Col xs="12" className="tube mb-3 p-3 text-center">
+                            <Col xs="12" className="box box-shadow-dark mb-3 p-3 text-center">
                             <Row className="mb-2">
-                                <Col xs="6">
-                                    <Row className="p-1 justify-content-center">
+                                <Col xs="6" >
+                                    <Row className="p-1 justify-content-centerbox box-shadow-dark">
                                     <Col xs="6" className="heading ">Total Income</Col>
                                     <Col xs="6" className="text-light text-align-left"> Rs. {this.state.income}</Col>
                                     </Row>
                                 </Col>
-                                <Col xs="6">
-                                    <Row className="p-1 justify-content-center">
+                                <Col xs="6" >
+                                    <Row className="p-1 justify-content-centerbox box-shadow-dark">
                                     <Col xs="6" className="heading ">Total Expenditure</Col>
                                     <Col xs="6" className="text-light text-align-left"> Rs. {this.state.expenditure}</Col>
                                     </Row>
@@ -148,10 +148,10 @@ export default class DashBoard extends React.Component{
                                 <Col xs="12" className="heading mb-2">Expenditure Details</Col>
                                 <Col xs="12">
                                     <Row className="justify-content-center mb-3">
-                                    <Col xs="5" className="tube bg-danger">
+                                    <Col xs="5" className="box box-shadow-dark bg-danger">
                                         Office- Rs.{this.state.office}
                                     </Col>
-                                    <Col xs="5" className="tube bg-warning">
+                                    <Col xs="5" className="box box-shadow-dark bg-warning">
                                         Personal- Rs.{this.state.personal}
                                     </Col>
                                     <Col xs="6" className="mt-3">
@@ -166,22 +166,22 @@ export default class DashBoard extends React.Component{
                                 </Col>
                                 <Col xs="12">
                                     <Row className="justify-content-center mb-3">
-                                    <Col xs="5" className="tube bg-danger">
+                                    <Col xs="5" className="box box-shadow-dark bg-danger">
                                         Fuel- Rs.{this.state.fuel}
                                     </Col>
-                                    <Col xs="5" className="tube bg-warning">
+                                    <Col xs="5" className="box box-shadow-dark bg-warning">
                                         Food- Rs.{this.state.food}
                                     </Col>
-                                    <Col xs="5" className="tube bg-primary">
+                                    <Col xs="5" className="box box-shadow-dark bg-primary">
                                         Medical- Rs.{this.state.medical}
                                     </Col>
-                                    <Col xs="5" className="tube bg-info">
+                                    <Col xs="5" className="box box-shadow-dark bg-info">
                                         Movie- Rs.{this.state.movie}
                                     </Col>
-                                    <Col xs="5" className="tube bg-success">
+                                    <Col xs="5" className="box box-shadow-dark bg-success">
                                         Loan- Rs.{this.state.loan}
                                     </Col>
-                                    <Col xs="5" className="tube bg-dark">
+                                    <Col xs="5" className="box box-shadow-dark bg-dark">
                                         Other- Rs.{this.state.other}
                                     </Col>
                                     <Col xs="6" className="mt-3">

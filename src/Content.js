@@ -108,7 +108,7 @@ export default class Content extends React.Component{
             window.localStorage.access_token
             ?
             <Col xs="12" className="p-0">
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="stick bg-dark">
+                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="stick bg-dark box-shadow-dark">
                 <Navbar.Brand href="#home">Menu</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

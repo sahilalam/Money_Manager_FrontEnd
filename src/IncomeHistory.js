@@ -127,7 +127,7 @@ export default class IncomeHistory extends React.Component{
                 
                 <Col xs="12" className="mb-5 text-center">
                     <Row className="justify-content-center">
-                    <Col xs="12" md="7" className="text-center"><Button className="btn-info buton mb-2" onClick={this.filter}>Filter</Button></Col>
+                    <Col xs="12" md="7" className="text-center"><Button className="btn-dark buton mb-2" onClick={this.filter}>Filter</Button></Col>
                     <Col xs="12"  md="7" className="p-2" ref={this.dropdown}>Filter Applied</Col>
                     <Col xs="12" md="7"  className="tube bg-cyan">
                         {
@@ -145,7 +145,7 @@ export default class IncomeHistory extends React.Component{
                                     date=new Date(date);
                                     date=date.toLocaleString();
                                     return (
-                                        <Col xs="12" className="box mb-2" key={d._id}>
+                                        <Col xs="12" className="box bg-dark box-shadow-dark mb-2" key={d._id}>
                                             <Row className="justify-content-center">
                                                 <Col xs="3" className="heading text-align-right">Amount : </Col><Col xs="9" className="text-align-left">Rs. {d.amount}</Col>
                                                 <Col xs="3" className="heading text-align-right">Description : </Col><Col xs="9" className="text-align-left">{d.description}</Col>
