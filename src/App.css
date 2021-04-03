@@ -17,21 +17,21 @@
   margin:0px;
   
   background-color: rgba(255, 255, 255, 0);
-  box-shadow: 2px 2px 10px cyan;
+  box-shadow: 2px 2px 5px cyan;
   border-radius: 20px;
   transition: 0.5s;
   border: 0px;
-  animation: boxShadow 3s infinite ;
+  animation: boxShadow 5s infinite ;
 }
 @keyframes boxShadow{
   0%{
-    box-shadow: 2px 2px 10px cyan;
+    box-shadow: 2px 2px 5px cyan;
   }
   50%{
     box-shadow: 0px 0px 10px darkslategrey;
   }
   100%{
-    box-shadow: 2px 2px 10px cyan;
+    box-shadow: 2px 2px 5px cyan;
   }
 }
 .buton:hover{
@@ -81,10 +81,10 @@
   border-radius: 10px;
 }
 .box-shadow{
-  box-shadow: 2px 2px 10px cyan;
+  box-shadow: 0px 0px 30px cyan;
 }
 .box-shadow-dark{
-  box-shadow: 2px 2px 10px rgb(43, 42, 42);
+  box-shadow: 2px 2px 30px rgb(43, 42, 42);
 }
 .text-align-left{
   text-align: left;
@@ -122,3 +122,58 @@
 .width-100{
   width:100%;
 }
+
+.dashboard{
+  height:400px;
+  background-image: url("./Media/Dashboard.PNG");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 10px;
+  transition: 0.5s; 
+  z-index: 0;
+  
+  
+}
+.income{
+  height:400px;
+  background-image: url("./Media/Income\ History.PNG");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 10px;
+  transition: 0.5s; 
+  z-index: 0;
+
+}
+.expenditure{
+  height:400px;
+  background-image: url("./Media/Expenditure\ History.PNG");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 10px;
+  transition: 0.5s;
+  z-index: 0; 
+  
+}
+.img{
+ 
+  border-radius: 10px;
+  transition: 0.5s; 
+  z-index: 1;
+}
+.dashboard:hover{
+  transform: scale(1.1);
+  z-index: 1;
+}
+.income:hover{
+  transform: scale(1.1);
+  z-index: 1;
+}
+.expenditure:hover{
+  transform: scale(1.1);
+  z-index: 1;
+}
+.img:hover{
+    transform: scale(1.1);
+  z-index: 1;
+}
+

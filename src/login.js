@@ -81,15 +81,15 @@ export default class Login extends React.Component{
                     <Row className="justify-content-center">
                         <Col md="5" xs="12" className="text-center">
                             <Form onSubmit={this.login} >
-                                <Col xs="12" className="header mb-3">
+                                <Col xs="12" className="box box-shadow-dark mb-3">
                                 <h5 className="heading"> Login </h5>
                                 </Col>
-                                <Col xs="12" className="box box-shadow">
+                                <Col xs="12" className="box box-shadow-dark">
                                 Enter your username..
                                 <Form.Control ref={this.username} type="text" placeholder="enter your username.." required={true} className="mb-3 input" />
                                 Enter your password..
                                 <Form.Control ref={this.password} type="password" placeholder="enter password.." required={true} className="mb-3 input" />
-                                <button type="submit" className="buton mb-2 header">Submit</button>
+                                <button type="submit" className="buton mb-2">Submit</button>
                                 </Col>   
                             </Form>
                             <Modal show={this.state.toast} onHide={this.toggleToast} backdrop="static" className="text text-dark">

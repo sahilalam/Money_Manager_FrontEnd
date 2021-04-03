@@ -83,17 +83,17 @@ export default class RegisterUser extends React.Component{
                 <Row className="justify-content-center">
                     <Col md="5" xs="12">
                         <Form onSubmit={this.register} className=" text-center">
-                            <Col xs="12" className="header mb-3">
+                            <Col xs="12" className="box box-shadow-dark mb-3">
                             <h5 className="heading">!!E-Mail verified!!</h5>
                             </Col>
-                            <Col  xs="12" className="box box-shadow mb-3">
+                            <Col  xs="12" className="box box-shadow-dark mb-3">
                                 Enter new username..
                                 <Form.Control ref={this.username} type="text" placeholder="Enter username.." required={true} className="mb-3 input" />
                                 Enter new password..
                                 <Form.Control ref={this.password} type="password" placeholder="Enter Password.." required={true} className="mb-3 input" onChange={this.passwordStatus} />
                                 Confirm your password..
                                 <Form.Control ref={this.confirm_password} type="password" placeholder="Confirm Password.." required={true} className="mb-3 input" onChange={this.confirmPassword} disabled={!this.state.password_entered}/>
-                                <button type="submit" className="buton mb-2 header" hidden={!this.state.password_confirmed}>Submit</button>
+                                <button type="submit" className="buton mb-2" hidden={!this.state.password_confirmed}>Submit</button>
                             </Col>
                             
                             
