@@ -135,9 +135,9 @@ componentDidUpdate(){
           </Row>
           {
             !window.localStorage.access_token &&
-            <Row className="justify-content-center p-5">
+            <Row className="justify-content-center p-2 p-md-5 ">
               <Col xs="12">
-                <Row className="justify-content-center p-5 mb-5">
+                <Row className="justify-content-center p-2 p-md-5  mb-5">
                   <Col xs="12" md="8">
                     <h3 className="heading">
                     Dashboard
@@ -152,7 +152,7 @@ componentDidUpdate(){
                   </Col>
 
                 </Row>
-                <Row className="justify-content-center p-5 mb-5">
+                <Row className="justify-content-center p-2 p-md-5  mb-5">
                 
                   <Col xs="12" md="8" className="text-align-right">
                     <h3 className="heading">
@@ -165,7 +165,7 @@ componentDidUpdate(){
                   </Col>
                   <Col xs="12" md="5" className="income box-shadow-dark"></Col>
                 </Row>
-                <Row className="justify-content-center p-5 mb-5">
+                <Row className="justify-content-center p-2 p-md-5  mb-5">
                   <Col xs="12" md="8" >
                     <h3 className="heading">
                     Expenditure History
