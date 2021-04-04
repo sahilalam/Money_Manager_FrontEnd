@@ -115,7 +115,7 @@ export default class DashBoard extends React.Component{
                     <Row className="justify-content-center">
                     <Col xs="12" className="mb-3">
                         <Dropdown>
-                            <Dropdown.Toggle ref={this.dropdown} id="dropdown-basic-1" className="buton" variant="dark">
+                            <Dropdown.Toggle ref={this.dropdown} id="dropdown-basic-1" className="buton" variant="bg-dark">
                                 Show Details of:
                             </Dropdown.Toggle>
 
